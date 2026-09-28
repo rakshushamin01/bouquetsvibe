@@ -1,0 +1,1137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Bouquets Vibe | Fresh Flowers & Custom Bouquets in Anekal, Karnataka</title>
+    <meta name="description" content="The Bouquets Vibe is Anekal's premier local flower shop located on Shankarnag Road. We specialize in custom bouquets, wedding floral decor, birthday flowers, and same-day delivery.">
+    <meta name="keywords" content="Flower shop Anekal, Custom Bouquets Anekal, Shankarnag Road florist, Fresh Flowers Anekal, Wedding Flowers Anekal, Same Day Flower Delivery Anekal, The Bouquets Vibe">
+    
+    <!-- Open Graph / Social Media -->
+    <meta property="og:title" content="The Bouquets Vibe - Fresh Flowers & Custom Bouquets">
+    <meta property="og:description" content="Artisan crafted bouquets and fresh flower delivery in Shankarnag Road, Bayasabhi Layout, Anekal. Order online or build your custom bouquet.">
+    <meta property="og:type" content="website">
+
+    <!-- Favicon -->
+    <link rel="icon" href="https://img.icons8.com/color/48/flower-bouquet.png" type="image/png">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..800;1,400..800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+    <!-- Leaflet Map CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- JSON-LD Structured Data for Local Business SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Florist",
+      "name": "The Bouquets Vibe",
+      "image": "https://images.unsplash.com/photo-1561181286-d3fee7d55364?auto=format&fit=crop&q=80&w=1000",
+      "telephone": "+91 98450 12345",
+      "email": "hello@thebouquetsvibe.com",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Shankarnag Road, Bayasabhi Layout, KSRTC Colony",
+        "addressLocality": "Anekal",
+        "addressRegion": "Karnataka",
+        "postalCode": "562106",
+        "addressCountry": "IN"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 12.7107,
+        "longitude": 77.6974
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+          "opens": "08:00",
+          "closes": "20:30"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Sunday",
+          "opens": "09:00",
+          "closes": "18:00"
+        }
+      ],
+      "priceRange": "₹₹",
+      "url": "https://thebouquetsvibe.com"
+    }
+    </script>
+</head>
+<body>
+
+    <!-- Announcement Bar -->
+    <div class="announcement-bar">
+        <div class="container announcement-content">
+            <span><i class="fa-solid fa-truck-fast"></i> Same-Day Delivery in Anekal & Surrounding Areas | Order before 5 PM</span>
+            <span><i class="fa-solid fa-phone"></i> Call/WhatsApp: <a href="tel:+919845012345">+91 98450 12345</a></span>
+        </div>
+    </div>
+
+    <!-- Navigation Bar -->
+    <header class="navbar" id="navbar">
+        <div class="container navbar-container">
+            <a href="#home" class="brand-logo">
+                <div class="logo-icon"><i class="fa-solid fa-seedling"></i></div>
+                <div class="logo-text">
+                    <span class="brand-name">The Bouquets Vibe</span>
+                    <span class="brand-tagline">Anekal • Local Florist</span>
+                </div>
+            </a>
+
+            <nav class="nav-links" id="navLinks">
+                <a href="#home" class="nav-link active">Home</a>
+                <a href="#shop" class="nav-link">Shop</a>
+                <a href="#builder" class="nav-link highlight-link">Custom Bouquet</a>
+                <a href="#services" class="nav-link">Services</a>
+                <a href="#about" class="nav-link">About Us</a>
+                <a href="#gallery" class="nav-link">Gallery</a>
+                <a href="#reviews" class="nav-link">Reviews</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </nav>
+
+            <div class="nav-actions">
+                <button class="icon-btn search-trigger-btn" id="searchToggleBtn" title="Search catalog">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+                
+                <button class="cart-btn" id="cartBtn" aria-label="View Shopping Cart">
+                    <i class="fa-solid fa-basket-shopping"></i>
+                    <span class="cart-label">Cart</span>
+                    <span class="cart-badge" id="cartBadge">0</span>
+                </button>
+
+                <button class="mobile-toggle-btn" id="mobileMenuBtn" aria-label="Toggle Navigation Menu">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Expandable Search Overlay -->
+        <div class="search-overlay" id="searchOverlay">
+            <div class="container search-overlay-container">
+                <div class="search-input-wrapper">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="text" id="globalSearchInput" placeholder="Search roses, lilies, birthday bouquets, wedding decor...">
+                    <button class="close-search-btn" id="closeSearchBtn"><i class="fa-solid fa-xmark"></i></button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-bg-overlay"></div>
+        <div class="container hero-container">
+            <div class="hero-content">
+                <div class="hero-badge"><i class="fa-solid fa-spa"></i> Freshly Harvested Local Floral Designs</div>
+                <h1 class="hero-title">Handcrafted Bouquets That Express What Words Cannot</h1>
+                <p class="hero-subtitle">Welcome to <strong>The Bouquets Vibe</strong> on Shankarnag Road, Anekal. From bespoke wedding arrangements to vibrant birthday roses, we design fresh, meaningful floral art for every moment.</p>
+                <div class="hero-actions">
+                    <a href="#shop" class="btn btn-primary"><i class="fa-solid fa-bag-shopping"></i> Explore Catalog</a>
+                    <a href="#builder" class="btn btn-secondary"><i class="fa-solid fa-wand-magic-sparkles"></i> Build Custom Bouquet</a>
+                    <a href="https://wa.me/919845012345?text=Hello%20The%20Bouquets%20Vibe,%20I%20would%20like%20to%20inquire%20about%20flowers" target="_blank" class="btn btn-whatsapp"><i class="fa-brands fa-whatsapp"></i> Quick WhatsApp Order</a>
+                </div>
+                
+                <div class="hero-features">
+                    <div class="feature-item">
+                        <div class="feature-icon"><i class="fa-solid fa-leaf"></i></div>
+                        <div>
+                            <strong>Farm-Fresh Daily</strong>
+                            <span>Handpicked morning blooms</span>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon"><i class="fa-solid fa-location-dot"></i></div>
+                        <div>
+                            <strong>100% Local Anekal</strong>
+                            <span>Shankarnag Rd, KSRTC Colony</span>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon"><i class="fa-solid fa-clock"></i></div>
+                        <div>
+                            <strong>Express Delivery</strong>
+                            <span>Same-day & scheduled slots</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero-card-visual">
+                <div class="hero-image-wrapper">
+                    <img src="https://images.unsplash.com/photo-1561181286-d3fee7d55364?auto=format&fit=crop&q=80&w=900" alt="The Bouquets Vibe Signature Bouquet" class="hero-img">
+                    <div class="floating-badge badge-top">
+                        <i class="fa-solid fa-star"></i> 4.9 Rating (250+ Reviews)
+                    </div>
+                    <div class="floating-badge badge-bottom">
+                        <i class="fa-solid fa-heart"></i> Crafted with Care in Anekal
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Shop & Products Section -->
+    <section class="section shop-section" id="shop">
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="sub-heading">Our Handpicked Collections</span>
+                <h2 class="section-title">Explore Floral Creations</h2>
+                <p class="section-description">Choose from our curated signature arrangements or filter by occasion to find the ideal bouquet for your loved ones.</p>
+            </div>
+
+            <!-- Categories Filter Tabs -->
+            <div class="category-tabs" id="categoryTabs">
+                <button class="tab-btn active" data-category="all"><i class="fa-solid fa-border-all"></i> All Offerings</button>
+                <button class="tab-btn" data-category="real"><i class="fa-solid fa-spa"></i> Fresh Real Flowers</button>
+                <button class="tab-btn" data-category="artificial"><i class="fa-solid fa-wand-magic-sparkles"></i> Artificial & Silk Flowers</button>
+                <button class="tab-btn" data-category="malas"><i class="fa-solid fa-[#8a2b53] fa-circle-nodes"></i> Fresh Floral Malas (Garlands)</button>
+                <button class="tab-btn" data-category="wedding"><i class="fa-solid fa-rings-wedding"></i> Wedding & Stage Decor</button>
+                <button class="tab-btn" data-category="birthday"><i class="fa-solid fa-cake-candles"></i> Birthday & Roses</button>
+            </div>
+
+            <!-- Filter Controls & Search -->
+            <div class="shop-filter-bar">
+                <div class="shop-search">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="text" id="productSearchInput" placeholder="Filter by flower type (e.g. Rose, Orchid, Lily)...">
+                </div>
+                <div class="shop-sort">
+                    <label for="sortSelect">Sort By:</label>
+                    <select id="sortSelect">
+                        <option value="featured">Featured First</option>
+                        <option value="price-low">Price: Low to High</option>
+                        <option value="price-high">Price: High to Low</option>
+                        <option value="popular">Most Popular</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Products Grid -->
+            <div class="products-grid" id="productsGrid">
+                <!-- Dynamically populated via JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Custom Bouquet Builder -->
+    <section class="section builder-section" id="builder">
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="sub-heading">Personalized Artistry</span>
+                <h2 class="section-title">Interactive Custom Bouquet Builder</h2>
+                <p class="section-description">Design a unique bouquet tailored to your exact style, favorite flowers, wrapping colors, and personal card message!</p>
+            </div>
+
+            <div class="builder-wrapper">
+                <div class="builder-controls">
+                    <!-- Step 1: Base Flower Selection -->
+                    <div class="builder-step">
+                        <div class="step-header">
+                            <span class="step-num">1</span>
+                            <h3>Select Primary Flowers</h3>
+                        </div>
+                        <div class="flower-options-grid" id="flowerBaseOptions">
+                            <label class="option-card active">
+                                <input type="radio" name="baseFlower" value="Red Roses" data-price="499" checked>
+                                <img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&q=80&w=200" alt="Red Roses">
+                                <div class="option-info">
+                                    <strong>Red Roses</strong>
+                                    <span>Classic & Passionate</span>
+                                    <span class="price-tag">₹499 base</span>
+                                </div>
+                            </label>
+
+                            <label class="option-card">
+                                <input type="radio" name="baseFlower" value="Asiatic Lilies" data-price="599">
+                                <img src="https://images.unsplash.com/photo-1579783902614-a3fb3927b675?auto=format&fit=crop&q=80&w=200" alt="Asiatic Lilies">
+                                <div class="option-info">
+                                    <strong>Asiatic Lilies</strong>
+                                    <span>Fragrant & Elegant</span>
+                                    <span class="price-tag">₹599 base</span>
+                                </div>
+                            </label>
+
+                            <label class="option-card">
+                                <input type="radio" name="baseFlower" value="Exotic Orchids" data-price="699">
+                                <img src="https://images.unsplash.com/photo-1525310072745-f49212b5ac6d?auto=format&fit=crop&q=80&w=200" alt="Exotic Orchids">
+                                <div class="option-info">
+                                    <strong>Exotic Orchids</strong>
+                                    <span>Luxurious & Modern</span>
+                                    <span class="price-tag">₹699 base</span>
+                                </div>
+                            </label>
+
+                            <label class="option-card">
+                                <input type="radio" name="baseFlower" value="Sunflowers & Gerberas" data-price="549">
+                                <img src="https://images.unsplash.com/photo-1597848212624-a19eb35e2651?auto=format&fit=crop&q=80&w=200" alt="Sunflowers">
+                                <div class="option-info">
+                                    <strong>Bright Sunflowers</strong>
+                                    <span>Vibrant & Cheerful</span>
+                                    <span class="price-tag">₹549 base</span>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Step 2: Arrangement Size & Style -->
+                    <div class="builder-step">
+                        <div class="step-header">
+                            <span class="step-num">2</span>
+                            <h3>Bouquet Size & Style</h3>
+                        </div>
+                        <div class="style-options-grid">
+                            <label class="style-card active">
+                                <input type="radio" name="bouquetSize" value="Standard Hand-tied (10-12 Stems)" data-multiplier="1" checked>
+                                <div class="style-content">
+                                    <i class="fa-solid fa-gift"></i>
+                                    <strong>Standard Hand-Tied</strong>
+                                    <span>10 - 12 Stems</span>
+                                    <small>Standard size</small>
+                                </div>
+                            </label>
+
+                            <label class="style-card">
+                                <input type="radio" name="bouquetSize" value="Grand Luxe (18-20 Stems)" data-multiplier="1.6">
+                                <div class="style-content">
+                                    <i class="fa-solid fa-crown"></i>
+                                    <strong>Grand Luxe</strong>
+                                    <span>18 - 20 Stems</span>
+                                    <small>+60% fuller</small>
+                                </div>
+                            </label>
+
+                            <label class="style-card">
+                                <input type="radio" name="bouquetSize" value="Signature Hatbox Edition" data-multiplier="2">
+                                <div class="style-content">
+                                    <i class="fa-solid fa-box-open"></i>
+                                    <strong>Signature Box</strong>
+                                    <span>Luxury Hatbox Arrangement</span>
+                                    <small>Premium presentation</small>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Step 3: Wrapping & Accessories -->
+                    <div class="builder-step">
+                        <div class="step-header">
+                            <span class="step-num">3</span>
+                            <h3>Paper Wrap & Ribbon Palette</h3>
+                        </div>
+                        <div class="color-options">
+                            <label class="color-swatch active" style="--swatch-color: #f7d6e0;">
+                                <input type="radio" name="wrapColor" value="Blush Pink & White Ribbon" checked>
+                                <span>Blush Pink</span>
+                            </label>
+                            <label class="color-swatch" style="--swatch-color: #8fa89b;">
+                                <input type="radio" name="wrapColor" value="Sage Green Eco Craft">
+                                <span>Sage Green</span>
+                            </label>
+                            <label class="color-swatch" style="--swatch-color: #2b2d42;">
+                                <input type="radio" name="wrapColor" value="Midnight Royal Blue">
+                                <span>Midnight Blue</span>
+                            </label>
+                            <label class="color-swatch" style="--swatch-color: #d4af37;">
+                                <input type="radio" name="wrapColor" value="Luxury Gold & Black">
+                                <span>Gold Matte</span>
+                            </label>
+                            <label class="color-swatch" style="--swatch-color: #c08552;">
+                                <input type="radio" name="wrapColor" value="Rustic Kraft Paper">
+                                <span>Rustic Kraft</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Step 4: Add-Ons -->
+                    <div class="builder-step">
+                        <div class="step-header">
+                            <span class="step-num">4</span>
+                            <h3>Delightful Add-Ons (Optional)</h3>
+                        </div>
+                        <div class="addons-grid">
+                            <label class="addon-card">
+                                <input type="checkbox" class="addon-checkbox" value="Ferrero Rocher Box (16 Pcs)" data-price="499">
+                                <div class="addon-info">
+                                    <i class="fa-solid fa-cookie"></i>
+                                    <span>Ferrero Rocher Box</span>
+                                    <strong>+₹499</strong>
+                                </div>
+                            </label>
+
+                            <label class="addon-card">
+                                <input type="checkbox" class="addon-checkbox" value="Cute Teddy Bear (8 inch)" data-price="299">
+                                <div class="addon-info">
+                                    <i class="fa-solid fa-shield-cat"></i>
+                                    <span>Cute Teddy Bear</span>
+                                    <strong>+₹299</strong>
+                                </div>
+                            </label>
+
+                            <label class="addon-card">
+                                <input type="checkbox" class="addon-checkbox" value="Warm LED Fairy String Lights" data-price="149">
+                                <div class="addon-info">
+                                    <i class="fa-solid fa-lightbulb"></i>
+                                    <span>LED Fairy Lights</span>
+                                    <strong>+₹149</strong>
+                                </div>
+                            </label>
+
+                            <label class="addon-card">
+                                <input type="checkbox" class="addon-checkbox" value="Handwritten Greeting Card" data-price="79">
+                                <div class="addon-info">
+                                    <i class="fa-solid fa-envelope-open-text"></i>
+                                    <span>Handwritten Card</span>
+                                    <strong>+₹79</strong>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Step 5: Card Message -->
+                    <div class="builder-step">
+                        <div class="step-header">
+                            <span class="step-num">5</span>
+                            <h3>Personal Card Note</h3>
+                        </div>
+                        <textarea id="customCardNote" placeholder="Write your heartfelt message here (e.g. 'Happy Birthday Priya! Wishing you endless joy and flowers. With love, Rahul')..."></textarea>
+                    </div>
+                </div>
+
+                <!-- Live Custom Summary Sidebar -->
+                <div class="builder-summary-card">
+                    <div class="summary-header">
+                        <i class="fa-solid fa-wand-magic-sparkles"></i>
+                        <h3>Your Custom Creation</h3>
+                    </div>
+
+                    <div class="custom-preview-image">
+                        <img id="builderPreviewImg" src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&q=80&w=500" alt="Custom Bouquet Preview">
+                    </div>
+
+                    <div class="summary-details">
+                        <div class="summary-row">
+                            <span>Base Flowers:</span>
+                            <strong id="summaryBase">Red Roses</strong>
+                        </div>
+                        <div class="summary-row">
+                            <span>Size / Style:</span>
+                            <strong id="summarySize">Standard Hand-tied</strong>
+                        </div>
+                        <div class="summary-row">
+                            <span>Wrapping:</span>
+                            <strong id="summaryWrap">Blush Pink</strong>
+                        </div>
+                        <div class="summary-row">
+                            <span>Selected Add-ons:</span>
+                            <strong id="summaryAddons">None</strong>
+                        </div>
+                        <div class="summary-row note-row">
+                            <span>Note:</span>
+                            <p id="summaryNote">"No note specified"</p>
+                        </div>
+                    </div>
+
+                    <div class="summary-price-box">
+                        <span class="total-label">Estimated Total:</span>
+                        <span class="total-price" id="builderTotalPrice">₹499</span>
+                    </div>
+
+                    <button class="btn btn-primary btn-block" id="addCustomToCartBtn">
+                        <i class="fa-solid fa-cart-plus"></i> Add Custom Bouquet To Cart
+                    </button>
+                    <button class="btn btn-whatsapp btn-block mt-2" id="orderCustomWhatsAppBtn">
+                        <i class="fa-brands fa-whatsapp"></i> Order Custom via WhatsApp
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Offered Section -->
+    <section class="section services-section bg-light" id="services">
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="sub-heading">What We Do Best</span>
+                <h2 class="section-title">Our Premium Services</h2>
+                <p class="section-description">Beyond everyday bouquets, The Bouquets Vibe brings artistry and fresh floral elegance to every special moment in Anekal.</p>
+            </div>
+
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon"><i class="fa-solid fa-hand-holding-heart"></i></div>
+                    <h3>Bespoke Custom Bouquets</h3>
+                    <p>Tell us your preferred colors, budget, and sentiment. Our master florists hand-select fresh morning blossoms to create a one-of-a-kind arrangement.</p>
+                    <ul class="service-features">
+                        <li><i class="fa-solid fa-check"></i> Customized colors & stem counts</li>
+                        <li><i class="fa-solid fa-check"></i> Personal card messages included</li>
+                        <li><i class="fa-solid fa-check"></i> Eco-friendly or luxury box wrap</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon"><i class="fa-solid fa-rings-wedding"></i></div>
+                    <h3>Weddings & Grand Events</h3>
+                    <p>Complete floral styling for weddings, receptions, engagements, and pujas across Anekal, Chandapura, and Electronic City. Stage, mandap, entrance arches, and car decor.</p>
+                    <ul class="service-features">
+                        <li><i class="fa-solid fa-check"></i> Full event consultation & setup</li>
+                        <li><i class="fa-solid fa-check"></i> Bridal garlands & bouquets</li>
+                        <li><i class="fa-solid fa-check"></i> Custom color palettes</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon"><i class="fa-solid fa-motorcycle"></i></div>
+                    <h3>Same-Day & Express Delivery</h3>
+                    <p>Need urgent flowers in Anekal? We provide swift delivery within 2-4 hours to Shankarnag Road, KSRTC Colony, Bayasabhi Layout, Attibele, and surrounding hubs.</p>
+                    <ul class="service-features">
+                        <li><i class="fa-solid fa-check"></i> Temperature-controlled handling</li>
+                        <li><i class="fa-solid fa-check"></i> Live delivery status updates</li>
+                        <li><i class="fa-solid fa-check"></i> Midnight surprise delivery options</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon"><i class="fa-solid fa-building-user"></i></div>
+                    <h3>Corporate & Office Subscriptions</h3>
+                    <p>Elevate your reception desk, corporate lounge, hotel lobby, or retail showroom with weekly or bi-weekly fresh floral arrangements refreshed regularly.</p>
+                    <ul class="service-features">
+                        <li><i class="fa-solid fa-check"></i> Hassle-free automatic replacements</li>
+                        <li><i class="fa-solid fa-check"></i> Dedicated corporate invoicing</li>
+                        <li><i class="fa-solid fa-check"></i> Custom vase rentals provided</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About The Shop Section -->
+    <section class="section about-section" id="about">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-image-column">
+                    <div class="about-image-stack">
+                        <img src="https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&q=80&w=800" alt="The Bouquets Vibe Storefront" class="about-img main-img">
+                        <div class="experience-badge">
+                            <strong>100%</strong>
+                            <span>Freshness Guarantee</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="about-content-column">
+                    <span class="sub-heading">About The Bouquets Vibe</span>
+                    <h2 class="section-title">Anekal's Neighborhood Florist with a Passion for Perfection</h2>
+                    <p class="lead-text">Located conveniently on Shankarnag Road, Bayasabhi Layout (KSRTC Colony), <strong>The Bouquets Vibe</strong> was founded with a clear vision: to transform fresh local flowers into unforgettable emotional experiences.</p>
+                    
+                    <p>We source our blooms daily directly from regional floral growers in Karnataka. Whether it is a single classic red rose, a luxury bridal garland, or a grand congratulations arrangement, every stem is inspected for vitality, color, and fragrance before being styled by our artisans.</p>
+
+                    <div class="values-grid">
+                        <div class="value-item">
+                            <i class="fa-solid fa-sun"></i>
+                            <div>
+                                <h4>Daily Fresh Harvest</h4>
+                                <p>No wilted stock—only vibrant, long-lasting flowers curated each morning.</p>
+                            </div>
+                        </div>
+
+                        <div class="value-item">
+                            <i class="fa-solid fa-heart"></i>
+                            <div>
+                                <h4>Local Heart & Soul</h4>
+                                <p>Deeply rooted in Anekal. Personalized, friendly service you can trust.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="about-cta-row">
+                        <a href="#contact" class="btn btn-primary"><i class="fa-solid fa-location-dot"></i> Visit Our Shop</a>
+                        <a href="#gallery" class="btn btn-outline"><i class="fa-solid fa-images"></i> View Our Portfolio</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery & Portfolio Section -->
+    <section class="section gallery-section" id="gallery">
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="sub-heading">Visual Showcase</span>
+                <h2 class="section-title">Our Past Floral Creations</h2>
+                <p class="section-description">Take a peek at recent wedding arrangements, gift bouquets, and event decor created right here in Anekal.</p>
+            </div>
+
+            <div class="gallery-filters">
+                <button class="gallery-filter-btn active" data-filter="all">All Photos</button>
+                <button class="gallery-filter-btn" data-filter="bouquets">Custom Bouquets</button>
+                <button class="gallery-filter-btn" data-filter="weddings">Weddings & Mandaps</button>
+                <button class="gallery-filter-btn" data-filter="boxes">Luxury Boxes</button>
+            </div>
+
+            <div class="gallery-grid" id="galleryGrid">
+                <div class="gallery-item" data-category="bouquets">
+                    <img src="https://images.unsplash.com/photo-1561181286-d3fee7d55364?auto=format&fit=crop&q=80&w=600" alt="Blush Rose Bouquet">
+                    <div class="gallery-overlay">
+                        <h4>Blush & White Symphony</h4>
+                        <span>Custom Hand-tied Bouquet</span>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="weddings">
+                    <img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&q=80&w=600" alt="Wedding Stage Floral Decoration">
+                    <div class="gallery-overlay">
+                        <h4>Anekal Reception Mandap</h4>
+                        <span>Wedding Floral Decor</span>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="boxes">
+                    <img src="https://images.unsplash.com/photo-1526047932273-341f2a7631f9?auto=format&fit=crop&q=80&w=600" alt="Luxury Hatbox Arrangement">
+                    <div class="gallery-overlay">
+                        <h4>Royal Velvet Hatbox</h4>
+                        <span>Luxury Rose Box</span>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="bouquets">
+                    <img src="https://images.unsplash.com/photo-1582794543139-8ac9cb0f7b11?auto=format&fit=crop&q=80&w=600" alt="Sunflower & Gerbera Mix">
+                    <div class="gallery-overlay">
+                        <h4>Sunshine Garden Delight</h4>
+                        <span>Mixed Flower Bouquet</span>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="weddings">
+                    <img src="https://images.unsplash.com/photo-1522057384400-681b42139a2a?auto=format&fit=crop&q=80&w=600" alt="Car Floral Decor">
+                    <div class="gallery-overlay">
+                        <h4>Wedding Car Decor</h4>
+                        <span>Traditional & Modern Fusion</span>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="boxes">
+                    <img src="https://images.unsplash.com/photo-1587314168485-3236d6710814?auto=format&fit=crop&q=80&w=600" alt="Pastel Orchid Arrangement">
+                    <div class="gallery-overlay">
+                        <h4>Pastel Orchid Bloom</h4>
+                        <span>Custom Gift Box</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials & Reviews Section -->
+    <section class="section reviews-section bg-light" id="reviews">
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="sub-heading">Loved By Locals</span>
+                <h2 class="section-title">What Our Customers Say</h2>
+                <p class="section-description">Real feedback from local residents, event organizers, and gift-givers in Anekal and neighboring areas.</p>
+            </div>
+
+            <div class="rating-summary-card">
+                <div class="rating-big font-serif">4.9</div>
+                <div class="rating-stars">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                </div>
+                <div class="rating-count">Based on 250+ verified local reviews in Anekal</div>
+            </div>
+
+            <div class="reviews-grid" id="reviewsGrid">
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="user-avatar">RP</div>
+                        <div>
+                            <strong>Rahul Prasad</strong>
+                            <div class="review-meta"><i class="fa-solid fa-location-dot"></i> Shankarnag Road, Anekal</div>
+                        </div>
+                    </div>
+                    <div class="review-stars">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="review-text">"Ordered a custom bouquet for my anniversary with same-day delivery to KSRTC Colony. The roses were incredibly fresh, and the blush wrapping paper looked so elegant! Will definitely order again."</p>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="user-avatar">SR</div>
+                        <div>
+                            <strong>Sneha Reddy</strong>
+                            <div class="review-meta"><i class="fa-solid fa-location-dot"></i> Chandapura / Anekal</div>
+                        </div>
+                    </div>
+                    <div class="review-stars">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="review-text">"The Bouquets Vibe did our family engagement ceremony flowers in Anekal. The entrance arch and stage decor were breathtaking! Very reasonable pricing and super friendly staff."</p>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="user-avatar">KM</div>
+                        <div>
+                            <strong>Kavitha M.</strong>
+                            <div class="review-meta"><i class="fa-solid fa-location-dot"></i> Bayasabhi Layout, Anekal</div>
+                        </div>
+                    </div>
+                    <div class="review-stars">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="review-text">"Love their interactive custom bouquet builder! Selected orchids and added fairy lights for my friend's birthday. They delivered it in less than 2 hours. Best florist in Anekal!"</p>
+                </div>
+            </div>
+
+            <!-- Leave a Review Form -->
+            <div class="add-review-box">
+                <h3>Share Your Experience With Us</h3>
+                <form id="addReviewForm" class="review-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Your Name *</label>
+                            <input type="text" id="revName" required placeholder="e.g. Ananya Kumar">
+                        </div>
+                        <div class="form-group">
+                            <label>Location / Area *</label>
+                            <input type="text" id="revLocation" required placeholder="e.g. KSRTC Colony, Anekal">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Rating *</label>
+                        <select id="revStars">
+                            <option value="5">⭐⭐⭐⭐⭐ (5/5 Excellent)</option>
+                            <option value="4">⭐⭐⭐⭐ (4/5 Great)</option>
+                            <option value="3">⭐⭐⭐ (3/5 Average)</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Your Review *</label>
+                        <textarea id="revComment" required placeholder="Tell us about the flowers, delivery speed, or customer service..."></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary"><i class="fa-solid fa-paper-plane"></i> Submit Review</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="section faq-section">
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="sub-heading">Got Questions?</span>
+                <h2 class="section-title">Frequently Asked Questions</h2>
+            </div>
+
+            <div class="faq-accordion">
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Where are you located in Anekal and what are your operating hours?</span>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>We are located at <strong>Shankarnag Road, Bayasabhi Layout, KSRTC Colony, Anekal, Karnataka 562106</strong>. We are open Monday to Saturday from 8:00 AM to 8:30 PM, and Sunday from 9:00 AM to 6:00 PM.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Which locations do you deliver to?</span>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>We offer express flower delivery throughout Anekal Town, KSRTC Colony, Bayasabhi Layout, Chandapura, Attibele, Jigani, Marsur, Electronic City Phase 1 & 2, and Suryacity.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>How can I place a custom floral order for an event?</span>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>You can use our online <a href="#builder">Custom Bouquet Builder</a>, fill out the <a href="#contact">Event Consultation Form</a> below, or message us directly on <a href="https://wa.me/919845012345" target="_blank">WhatsApp (+91 98450 12345)</a>. We will discuss your themes, budget, and date.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>How do I keep my bouquet fresh longer at home?</span>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Trim stem ends by 1 cm at a 45-degree angle under water, place in a clean vase filled with cool fresh water, keep away from direct sunlight & fan drafts, and change the water every 2 days!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Order & Contact System Section -->
+    <section class="section contact-section" id="contact">
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="sub-heading">Connect With Us</span>
+                <h2 class="section-title">Order, Inquire, or Visit Us</h2>
+                <p class="section-description">We are here to help you select the ideal flowers. Reach out via form, direct phone call, or drop by our shop in Anekal!</p>
+            </div>
+
+            <div class="contact-grid">
+                <!-- Contact & Location Info -->
+                <div class="contact-info-card">
+                    <h3>Contact Information</h3>
+                    <p class="info-intro">Have questions or need urgent floral recommendations? Get in touch with our team directly.</p>
+
+                    <div class="info-list">
+                        <div class="info-item">
+                            <div class="info-icon"><i class="fa-solid fa-location-dot"></i></div>
+                            <div>
+                                <strong>Shop Address</strong>
+                                <p>Shankarnag Road, Bayasabhi Layout,<br>KSRTC Colony, Anekal, Karnataka 562106</p>
+                            </div>
+                        </div>
+
+                        <div class="info-item">
+                            <div class="info-icon"><i class="fa-solid fa-phone"></i></div>
+                            <div>
+                                <strong>Phone / Orders</strong>
+                                <p><a href="tel:+919845012345">+91 98450 12345</a> / <a href="tel:+919481267890">+91 94812 67890</a></p>
+                            </div>
+                        </div>
+
+                        <div class="info-item">
+                            <div class="info-icon"><i class="fa-brands fa-whatsapp"></i></div>
+                            <div>
+                                <strong>WhatsApp Quick Chat</strong>
+                                <p><a href="https://wa.me/919845012345?text=Hello%20The%20Bouquets%20Vibe" target="_blank">+91 98450 12345 (Click to Chat)</a></p>
+                            </div>
+                        </div>
+
+                        <div class="info-item">
+                            <div class="info-icon"><i class="fa-solid fa-envelope"></i></div>
+                            <div>
+                                <strong>Email Address</strong>
+                                <p><a href="mailto:hello@thebouquetsvibe.com">hello@thebouquetsvibe.com</a></p>
+                            </div>
+                        </div>
+
+                        <div class="info-item">
+                            <div class="info-icon"><i class="fa-solid fa-clock"></i></div>
+                            <div>
+                                <strong>Opening Hours</strong>
+                                <p>Mon - Sat: 8:00 AM - 8:30 PM<br>Sunday: 9:00 AM - 6:00 PM</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="social-links">
+                        <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="https://wa.me/919845012345" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+                        <a href="#" aria-label="Google Business"><i class="fa-brands fa-google"></i></a>
+                    </div>
+                </div>
+
+                <!-- Interactive Consultation / Custom Order Form -->
+                <div class="contact-form-card">
+                    <h3>Custom Order & Consultation Request</h3>
+                    <p>Planning an event or need a specialized arrangement? Fill in your details below and we will get back to you within 30 minutes!</p>
+
+                    <form id="consultationForm" class="contact-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="custName">Full Name *</label>
+                                <input type="text" id="custName" required placeholder="e.g. Ramesh Kumar">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="custPhone">Phone Number (WhatsApp) *</label>
+                                <input type="tel" id="custPhone" required placeholder="e.g. +91 98765 43210">
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="custEmail">Email Address</label>
+                                <input type="email" id="custEmail" placeholder="name@example.com">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="eventType">Inquiry Type *</label>
+                                <select id="eventType" required>
+                                    <option value="">Select Service / Event</option>
+                                    <option value="Custom Bouquet Order">Custom Bouquet Order</option>
+                                    <option value="Wedding / Reception Decor">Wedding & Reception Floral Decor</option>
+                                    <option value="Birthday / Anniversary Party">Birthday / Anniversary Setup</option>
+                                    <option value="Corporate Event / Subscription">Corporate Flowers & Subscriptions</option>
+                                    <option value="Bulk Flower Request">Bulk Flower Wholesale Order</option>
+                                    <option value="General Inquiry">General Question</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="eventDate">Preferred Delivery/Event Date</label>
+                                <input type="date" id="eventDate">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="budgetRange">Approximate Budget (₹)</label>
+                                <select id="budgetRange">
+                                    <option value="Below ₹1,000">Below ₹1,000</option>
+                                    <option value="₹1,000 - ₹2,500">₹1,000 - ₹2,500</option>
+                                    <option value="₹2,500 - ₹5,000">₹2,500 - ₹5,000</option>
+                                    <option value="₹5,000 - ₹15,000">₹5,000 - ₹15,000</option>
+                                    <option value="₹15,000+ (Event Decor)">₹15,000+ (Grand Event Decor)</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="custMessage">Special Requirements / Notes *</label>
+                            <textarea id="custMessage" required rows="4" placeholder="Describe flower preferences, color themes, delivery address in Anekal, or card message..."></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-block">
+                            <i class="fa-solid fa-paper-plane"></i> Submit Consultation Request
+                        </button>
+                    </form>
+                    
+                    <div class="form-success-message" id="formSuccessMessage">
+                        <i class="fa-solid fa-circle-check"></i>
+                        <h4>Thank You for Requesting!</h4>
+                        <p>Your inquiry has been received. Our floral stylist will call/WhatsApp you shortly at your provided phone number.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Embedded Interactive Map -->
+            <div class="map-wrapper-card mt-5">
+                <div class="map-header">
+                    <h3><i class="fa-solid fa-map-location-dot"></i> Visit Our Store in Anekal</h3>
+                    <p>Shankarnag Road, Bayasabhi Layout, KSRTC Colony, Anekal, Karnataka 562106</p>
+                </div>
+                <div id="leafletMap" class="map-container"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-col brand-col">
+                <div class="logo-text">
+                    <span class="brand-name text-white">The Bouquets Vibe</span>
+                    <span class="brand-tagline">Crafted with Love, Blooming in Anekal</span>
+                </div>
+                <p class="footer-bio">Anekal's premier local flower boutique. Offering handcrafted bouquets, fresh morning roses, wedding decorations, and swift local delivery across Anekal and nearby areas.</p>
+                <div class="footer-socials">
+                    <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="https://wa.me/919845012345" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-col">
+                <h4 class="footer-title">Quick Links</h4>
+                <ul class="footer-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#shop">Shop All Bouquets</a></li>
+                    <li><a href="#builder">Custom Bouquet Builder</a></li>
+                    <li><a href="#services">Our Floral Services</a></li>
+                    <li><a href="#about">About Our Shop</a></li>
+                    <li><a href="#gallery">Past Work Gallery</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4 class="footer-title">Delivery Coverage</h4>
+                <ul class="footer-links">
+                    <li><a href="#contact">Anekal Town & KSRTC Colony</a></li>
+                    <li><a href="#contact">Bayasabhi Layout</a></li>
+                    <li><a href="#contact">Chandapura & Attibele</a></li>
+                    <li><a href="#contact">Jigani Industrial Area</a></li>
+                    <li><a href="#contact">Electronic City (Phase 1 & 2)</a></li>
+                    <li><a href="#contact">Suryacity & Marsur</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4 class="footer-title">Store Location</h4>
+                <address class="footer-address">
+                    <i class="fa-solid fa-location-dot"></i> Shankarnag Road, Bayasabhi Layout, KSRTC Colony, Anekal, Karnataka 562106<br>
+                    <i class="fa-solid fa-phone"></i> +91 98450 12345 / +91 94812 67890<br>
+                    <i class="fa-solid fa-envelope"></i> hello@thebouquetsvibe.com
+                </address>
+                <div class="payment-icons mt-3">
+                    <span class="pay-badge"><i class="fa-solid fa-mobile-screen"></i> UPI / GPay / PhonePe</span>
+                    <span class="pay-badge"><i class="fa-solid fa-credit-card"></i> Card / Cash</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="container footer-bottom-content">
+                <p>&copy; 2026 The Bouquets Vibe. All Rights Reserved. Designed for Shankarnag Road, Anekal, Karnataka.</p>
+                <div class="footer-policy-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Delivery Policy</a>
+                    <a href="#">Replacement Guarantee</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Quick Product Detail Modal -->
+    <div class="modal" id="productModal">
+        <div class="modal-dialog">
+            <button class="modal-close" id="modalCloseBtn">&times;</button>
+            <div class="modal-body" id="modalBody">
+                <!-- Dynamically loaded product details -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Shopping Cart Slide-Over Drawer -->
+    <div class="cart-drawer-overlay" id="cartOverlay"></div>
+    <div class="cart-drawer" id="cartDrawer">
+        <div class="cart-drawer-header">
+            <h3><i class="fa-solid fa-basket-shopping"></i> Your Flower Basket</h3>
+            <button class="close-cart-btn" id="closeCartBtn">&times;</button>
+        </div>
+
+        <div class="cart-drawer-body" id="cartDrawerBody">
+            <div class="empty-cart-state" id="emptyCartState">
+                <i class="fa-solid fa-seedling"></i>
+                <p>Your basket is currently empty.</p>
+                <a href="#shop" class="btn btn-primary btn-sm close-cart-link">Browse Flowers</a>
+            </div>
+
+            <div class="cart-items-list" id="cartItemsList">
+                <!-- Dynamically populated cart items -->
+            </div>
+        </div>
+
+        <div class="cart-drawer-footer" id="cartDrawerFooter">
+            <div class="cart-summary-line">
+                <span>Subtotal:</span>
+                <strong id="cartSubtotal">₹0</strong>
+            </div>
+            <div class="cart-summary-line">
+                <span>Local Delivery (Anekal):</span>
+                <strong class="text-success">FREE</strong>
+            </div>
+            <div class="cart-summary-line total-line">
+                <span>Total Amount:</span>
+                <strong id="cartTotal">₹0</strong>
+            </div>
+
+            <div class="cart-actions-grid">
+                <button class="btn btn-primary btn-block" id="proceedCheckoutBtn">
+                    <i class="fa-solid fa-shield-heart"></i> Proceed To Checkout
+                </button>
+                <button class="btn btn-whatsapp btn-block mt-2" id="whatsappCheckoutBtn">
+                    <i class="fa-brands fa-whatsapp"></i> Order Cart via WhatsApp
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Checkout Modal -->
+    <div class="modal" id="checkoutModal">
+        <div class="modal-dialog checkout-dialog">
+            <button class="modal-close" id="checkoutCloseBtn">&times;</button>
+            <div class="modal-body p-4">
+                <h2 class="font-serif mb-2"><i class="fa-solid fa-truck-ramp-box"></i> Complete Your Order</h2>
+                <p class="text-muted mb-4">Fast delivery to Anekal and surrounding towns.</p>
+
+                <form id="checkoutForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="chkName">Recipient / Your Name *</label>
+                            <input type="text" id="chkName" required placeholder="Full name">
+                        </div>
+                        <div class="form-group">
+                            <label for="chkPhone">Contact Phone Number *</label>
+                            <input type="tel" id="chkPhone" required placeholder="+91 XXXXX XXXXX">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="chkAddress">Delivery Address in Anekal *</label>
+                        <textarea id="chkAddress" required rows="2" placeholder="House/Flat No, Landmark, Bayasabhi Layout, KSRTC Colony, Anekal..."></textarea>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="chkDate">Delivery Date *</label>
+                            <input type="date" id="chkDate" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="chkSlot">Time Slot *</label>
+                            <select id="chkSlot" required>
+                                <option value="Morning (9 AM - 12 PM)">Morning (9 AM - 12 PM)</option>
+                                <option value="Afternoon (12 PM - 4 PM)">Afternoon (12 PM - 4 PM)</option>
+                                <option value="Evening (4 PM - 8 PM)">Evening (4 PM - 8 PM)</option>
+                                <option value="Midnight Surprise (11:30 PM - 12:15 AM)">Midnight Surprise (+₹150)</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="chkPayment">Payment Option *</label>
+                        <select id="chkPayment" required>
+                            <option value="UPI / PhonePe / GPay on Delivery">UPI / PhonePe / GPay on Delivery</option>
+                            <option value="Pay via WhatsApp Link">Pay via WhatsApp Link (Instant QR)</option>
+                            <option value="Cash on Delivery (COD)">Cash on Delivery (COD)</option>
+                        </select>
+                    </div>
+
+                    <div class="checkout-summary-box mb-4">
+                        <div class="summary-line"><span>Order Total:</span><strong id="chkFinalTotal">₹0</strong></div>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-block">
+                        <i class="fa-solid fa-check-circle"></i> Confirm & Place Flower Order
+                    </button>
+                </form>
+
+                <div id="checkoutSuccessMessage" class="checkout-success hidden">
+                    <div class="text-center py-4">
+                        <i class="fa-solid fa-circle-check success-icon"></i>
+                        <h3>Order Successfully Placed!</h3>
+                        <p>Thank you for choosing <strong>The Bouquets Vibe</strong>. We have logged your order. Our florists in Anekal are preparing your fresh flowers!</p>
+                        <div class="order-id-badge" id="orderIdBadge">Order #TBV-10492</div>
+                        <button class="btn btn-whatsapp mt-4" id="sendOrderToWhatsAppBtn">
+                            <i class="fa-brands fa-whatsapp"></i> Send Order Details to Florist on WhatsApp
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    
+    <!-- Script -->
+    <script src="script.js"></script>
+</body>
+</html>
